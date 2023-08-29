@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Mali:wght@200&display=swap');
+
+* {
+    font-family: 'Mali', cursive;
+}
+
+.home {
+    background-image: url(../../../assets//img/capa.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.home>div {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.img_casal {
+    max-width: 300px;
+}
+
+/*  */
+
+.section_name {
+    background-image: url(../../../assets//img/capa.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.section_name form {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.section_name form input {
+    width: 100%;
+    border-radius: 5px;
+    height: 40px;
+    border: 1px solid #929292;
+    padding: 10px;
+    font-size: 24px;
+}
