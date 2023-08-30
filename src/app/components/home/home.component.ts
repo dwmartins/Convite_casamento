@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import * as AOS from 'aos';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-home',
@@ -7,18 +8,22 @@ import * as AOS from 'aos';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit{
-
-  ngOnInit(): void {
-    AOS.init();
-  }
+  @ViewChild('finish', { static: true }) finish!: ElementRef;
+  
   people_name: string= '';
   qtd_people: number = 0;
-
+  
   showSection1 = true;
   showSection2 = false;
   showSection3 = false;
-
+  
   activeSection = 1;
+
+  constructor(private modal: NgbModal) {}
+  
+  ngOnInit(): void {
+    AOS.init();
+  }
 
   showSection(sectionNumber: number) {
     this.activeSection = sectionNumber;
@@ -34,4 +39,8 @@ export class HomeComponent implements OnInit{
   lessPeople() {
     this.qtd_people -= 1;
   }
+
+  // openVerticallyCentered(content) {
+	// 	this.modalService.open(content, { centered: true });
+	// }
 }
