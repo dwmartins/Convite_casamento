@@ -10,6 +10,7 @@
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
+    padding: 10px;
 }
 
 .home>div {
@@ -35,7 +36,7 @@
     gap: 50px;
     flex-direction: column;
     align-items: center;
-    padding: 40px 0;
+    padding: 40px 10px;
 }
 
 .section_name form {
@@ -53,4 +54,68 @@
     border: 1px solid #929292;
     padding: 10px;
     font-size: 24px;
+}
+
+.section_name form input:focus {
+    outline: none !important;
+    border: 1px solid #e49e9ea9 !important;
+}
+
+/*  */
+
+.section_confirm {
+    background-image: url(../../../assets//img/capa.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    gap: 80px;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 10px;
+}
+
+.section_confirm form {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.section_confirm form input {
+    width: 70px;
+    border-radius: 5px;
+    padding: 5px;
+    border: none;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.section_confirm form input:focus {
+    outline: none !important;
+    border: 1px solid #e49e9ea9 !important;
+}
+
+.section_confirm div {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.section_confirm .icon_qtd {
+    font-size: 42px;
+    color: #ff8080ee;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
 }

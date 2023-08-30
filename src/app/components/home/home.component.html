@@ -1,7 +1,7 @@
-<section class="home m-0 d-flex justify-content-center container-fluid">
+<section *ngIf="showSection1" class="home m-0 d-flex justify-content-center container-fluid">
 
     <div class="my-5">
-        <div class="d-flex align-items-center flex-column">
+        <div data-aos="fade-right" data-aos-duration="1000" class="d-flex align-items-center flex-column">
             <div class="d-flex justify-content-center img_casal">
                 <img class="w-100" src="../../../assets/img/img_casal.png" alt="Noivos">
             </div>
@@ -10,24 +10,42 @@
             </div>
         </div>
     
-        <div class="text-center">
+        <div data-aos="fade-left" data-aos-duration="1000" class="text-center">
             <h1 class="text-secondary-emphasis fs-1 fw-bolder">Está chegando o dia!</h1>
-            <p class="text-secondary-emphasis fw-bolder">Ficaríamos com muito prazer em receber sua confirmação de presença.</p>
+            <p class="text-secondary-emphasis fw-bolder">Ficaríamos com muito prazer em receber sua confirmação de presença em nossa festa de casamento.</p>
     
-            <button class="btn btn-light btn-lg w-50 mt-4 fw-semibold border border-2">Seguinte</button>
+            <button (click)="showSection(2)" class="btn btn-light btn-lg w-50 mt-4 fw-semibold border border-2">Seguinte</button>
         </div>
     </div>
 
 </section>
 
-<section class="section_name container-fluid">
-    <div class="d-flex justify-content-center img_casal">
+<section class="section_name container-fluid" *ngIf="showSection2">
+    <div data-aos="fade-right" data-aos-duration="1000" class="d-flex justify-content-center img_casal">
         <img class="w-100" src="../../../assets/img/img_casal.png" alt="Noivos">
     </div>
 
-    <form>
+    <form data-aos="fade-left" data-aos-duration="1000">
         <h1 class="text-secondary-emphasis fs-1 fw-bolder mb-3">Digite seu nome por favor</h1>
-        <input class="mb-4" type="text" name="name" id="name" placeholder="Ex: Tatiane">
-        <button class="btn btn-light btn-lg w-50 mt-4 fw-semibold border border-2">Seguinte</button>
+        <input class="mb-4" type="text" name="name" id="name" placeholder="Ex: Tatiane" [(ngModel)]="people_name" maxlength="20">
+        <button (click)="showSection(3)" class="btn btn-light btn-lg w-50 mt-4 fw-semibold border border-2" [disabled]="!people_name">Seguinte</button>
+    </form>
+</section>
+
+<section class="section_confirm" *ngIf="showSection3">
+    <div data-aos="fade-right" data-aos-duration="1000" class="d-flex justify-content-center img_casal">
+        <img class="w-100" src="../../../assets/img/img_casal.png" alt="Noivos">
+    </div>
+
+    <form data-aos="fade-left" data-aos-duration="1000">
+        <h1 class="text-secondary-emphasis fs-1 fw-bolder mb-4 text-center">
+            {{ people_name }}, quantas pessoas irão com você??
+        </h1>
+        <div>
+            <i class="bi bi-arrow-left-short icon_qtd" (click)="lessPeople()"></i>
+            <input type="number" name="qtd_people" id="qtd_people" [(ngModel)]="qtd_people">
+            <i class="bi bi-arrow-right-short icon_qtd" (click)="morePeople()"></i>
+        </div>
+        <button class="btn btn-light btn-lg w-50 mt-4 fw-semibold border border-2">Confirmar <i class="bi bi-check-lg fs-2"></i></button>
     </form>
 </section>
