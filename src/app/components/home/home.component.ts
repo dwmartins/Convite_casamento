@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import * as AOS from 'aos';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { PeopleService } from 'src/app/services/people.service';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,9 @@ export class HomeComponent implements OnInit{
   
   activeSection = 1;
 
-  constructor(private modal: NgbModal) {}
+  spinner: boolean = false;
+
+  constructor(private peopleService: PeopleService, private modal: NgbModal) {}
   
   ngOnInit(): void {
     AOS.init();
@@ -40,7 +43,15 @@ export class HomeComponent implements OnInit{
     this.qtd_people -= 1;
   }
 
-  // openVerticallyCentered(content) {
-	// 	this.modalService.open(content, { centered: true });
-	// }
+  insertPeople() {
+    this.spinner = true;
+    this.peopleService.addPeople(this.people_name, this.qtd_people).subscribe((response) => {
+      this.spinner = false;
+      console.log("Dandos inseridos com sucesso!");
+      this.modal.open(this.finish, { centered: true });
+    }, (error) => {
+      console.log(`ERRO: ${error}`);
+      this.spinner = false;
+    })
+  }
 }
