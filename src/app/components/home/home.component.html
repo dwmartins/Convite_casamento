@@ -46,6 +46,6 @@
             <input type="number" name="qtd_people" id="qtd_people" [(ngModel)]="qtd_people">
             <i class="bi bi-arrow-right-short icon_qtd" (click)="morePeople()"></i>
         </div>
-        <button class="btn btn-light btn-lg w-50 mt-4 fw-semibold border border-2">Confirmar <i class="bi bi-check-lg fs-2"></i></button>
+        <button class="btn btn-light btn-lg w-50 mt-4 fw-semibold border border-2 d-flex align-items-center justify-content-center aling-items-center" [disabled]="!qtd_people">Confirmar <i class="bi bi-check-lg fs-2"></i></button>
     </form>
 </section>
