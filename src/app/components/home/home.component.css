@@ -119,3 +119,9 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="number"] {
     -moz-appearance: textfield;
 }
+
+@media screen and (max-height: 744px) {
+    section {
+        height: 750px !important;
+    }
+}
