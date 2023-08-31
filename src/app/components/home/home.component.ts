@@ -50,6 +50,7 @@ export class HomeComponent implements OnInit{
       console.log("Dandos inseridos com sucesso!");
       this.modal.open(this.finish, { centered: true });
     }, (error) => {
+      alert('Houve um erro ao salvar sua presença, tente novamente.')
       console.log(`ERRO: ${error}`);
       this.spinner = false;
     })
