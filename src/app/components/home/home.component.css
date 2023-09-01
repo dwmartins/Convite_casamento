@@ -126,3 +126,16 @@ input[type="number"] {
         height: 750px !important;
     }
 }
+
+.address {
+    background-image: url(../../../assets//img/capa.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+}

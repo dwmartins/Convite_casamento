@@ -52,17 +52,29 @@
         <button *ngIf="!spinner" (click)="insertPeople()" class="btn btn-light btn-lg w-50 mt-4 fw-semibold border border-2 d-flex align-items-center justify-content-center aling-items-center" [disabled]="!qtd_people">Confirmar <i class="bi bi-check-lg fs-2"></i></button>
     </form>
 </section>
+<section class="address" *ngIf="showSection4">
+    
+    <h1 class="text-secondary-emphasis fs-1 fw-bolder p-2 text-center">R. Manoel da Costa 216, Parque Pampulha, Agudos SP</h1>
+    <div class="d-flex justify-content-center">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1843.4177988989993!2d-48.969801406714!3d-22.47281150506656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c0a136e8f6f26f%3A0xf5b81a6ab63f2140!2sR.%20Manoel%20A%20da%20Costa%2C%20216%20-%20Parque%20Pampulha%2C%20Agudos%20-%20SP%2C%2017120-000!5e0!3m2!1spt-BR!2sbr!4v1693527533317!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    
+</section>
 
-<ng-template #finish let-modal (click)="showSection(1)">
+<ng-template #finish let-modal>
 	<div class="d-flex justify-content-end rounded-top">
-        <i class="bi bi-x-lg fs-1 p-2 text-danger" aria-label="Close" (click)="modal.dismiss('Cross click') || showSection(1)"></i>
+        <i class="bi bi-x-lg fs-1 p-2 text-danger" aria-label="Close" (click)="modal.dismiss('Cross click') || showSection(4)"></i>
     </div>
 
     <div class="d-flex justify-content-center mb-1 p-1">
         <div class="w-50 p-3">
-            <img class="w-100" src="../../../assets//img/check.webp" alt="finish">
+            <img class="w-100" src="../../../assets//img/check.png" alt="finish">
         </div>
     </div>
 
     <h1 class="text-secondary-emphasis fs-1 fw-bolder mb-4 text-center p-2">Ficamos imensamente felizes com a sua presença.</h1>
+
+    <div class="d-flex justify-content-center py-3">
+        <button aria-label="Close" (click)="modal.dismiss('Cross click') || showSection(4)" class="btn btn-light btn-lg w-50 mt-4 fw-semibold border border-2" [disabled]="!people_name">Ver endereço</button>
+    </div>
 </ng-template>

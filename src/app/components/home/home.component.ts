@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit{
   showSection1 = true;
   showSection2 = false;
   showSection3 = false;
+  showSection4 = false;
   
   activeSection = 1;
 
@@ -33,6 +34,7 @@ export class HomeComponent implements OnInit{
     this.showSection1 = sectionNumber === 1;
     this.showSection2 = sectionNumber === 2;
     this.showSection3 = sectionNumber === 3;
+    this.showSection4 = sectionNumber === 4;
   }
 
   morePeople() {
