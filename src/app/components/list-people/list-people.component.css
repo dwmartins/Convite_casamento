@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Mali:wght@200&display=swap');
+
+* {
+    font-family: 'Mali', cursive;
+}
+
+section {
+    background-image: url(../../../assets//img/capa.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
+}
+
+.qtd_peoples {
+    color: #ff8080ee;
+}
+
+.table_contents div{
+    max-height: 400px;
+}
+
+@media screen and (max-height: 744px) {
+    section {
+        height: 750px !important;
+    }
+}
