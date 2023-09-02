@@ -21,4 +21,8 @@ export class PeopleService {
 
     return this.http.post(`${this.API}/insere-pessoa`, values);
   }
+
+  getPeoples() {
+    return this.http.get<People[]>(`${this.API}/lista-pessoas`);
+  }
 }

@@ -19,7 +19,14 @@ section {
 }
 
 .table_contents div{
-    max-height: 400px;
+    max-height: 500px;
+}
+
+tbody tr {
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    overflow: hidden !important; 
+    max-width: 210px !important;
 }
 
 @media screen and (max-height: 744px) {
