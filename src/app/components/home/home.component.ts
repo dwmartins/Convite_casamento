@@ -10,6 +10,7 @@ import { PeopleService } from 'src/app/services/people.service';
 })
 export class HomeComponent implements OnInit{
   @ViewChild('finish', { static: true }) finish!: ElementRef;
+  @ViewChild('error', { static: true }) error!: ElementRef;
   
   people_name: string= '';
   qtd_people: number = 0;
@@ -49,10 +50,9 @@ export class HomeComponent implements OnInit{
     this.spinner = true;
     this.peopleService.addPeople(this.people_name, this.qtd_people).subscribe((response) => {
       this.spinner = false;
-      console.log("Dandos inseridos com sucesso!");
       this.modal.open(this.finish, { centered: true });
     }, (error) => {
-      alert('Houve um erro ao salvar sua presença, tente novamente.')
+      this.modal.open(this.error, { centered: true });
       console.log(`ERRO: ${error}`);
       this.spinner = false;
     })

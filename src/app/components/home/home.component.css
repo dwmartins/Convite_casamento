@@ -24,6 +24,16 @@
     max-width: 300px;
 }
 
+.address_desc {
+    color: #ff8080ee;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.text_names {
+    color: #ff8080ee;
+}
+
 /*  */
 
 .section_name {
@@ -138,4 +148,8 @@ input[type="number"] {
     display: flex;
     flex-direction: column;
     gap: 5%;
+}
+
+.icon_error {
+    font-size: 62px;
 }

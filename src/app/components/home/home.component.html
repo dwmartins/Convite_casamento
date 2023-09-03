@@ -12,8 +12,11 @@
     
         <div data-aos="fade-left" data-aos-duration="1000" class="text-center">
             <h1 class="text-secondary-emphasis fs-1 fw-bolder">Está chegando o dia!</h1>
-            <p class="text-secondary-emphasis fw-bolder">Ficaríamos com muito prazer em receber sua confirmação de presença em nossa festa de casamento.</p>
-    
+            <p class="text-secondary-emphasis fw-bolder fs-5">Ficaríamos com muito prazer em receber sua confirmação de presença em nossa festa de casamento.</p>
+            
+            <div class="d-flex aling-items-center justify-content-center">
+                <p class="address_desc fs-5" (click)="showSection(4)">Ver endereço <i class="bi bi-geo-alt"></i></p>
+            </div> 
             <button (click)="showSection(2)" class="btn btn-light btn-lg w-50 mt-4 fw-semibold border border-2">Seguinte</button>
         </div>
     </div>
@@ -39,7 +42,7 @@
 
     <form data-aos="fade-left" data-aos-duration="1000">
         <h1 class="text-secondary-emphasis fs-1 fw-bolder mb-4 text-center">
-            {{ people_name }}, quantas pessoas irão com você??
+            <span class="text_names">{{ people_name }}</span>, quantas pessoas irão com você??
         </h1>
         <div>
             <i class="bi bi-arrow-left-short icon_qtd" (click)="lessPeople()"></i>
@@ -59,6 +62,10 @@
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1843.4177988989993!2d-48.969801406714!3d-22.47281150506656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c0a136e8f6f26f%3A0xf5b81a6ab63f2140!2sR.%20Manoel%20A%20da%20Costa%2C%20216%20-%20Parque%20Pampulha%2C%20Agudos%20-%20SP%2C%2017120-000!5e0!3m2!1spt-BR!2sbr!4v1693527533317!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     
+    <div class="d-flex aling-items-center justify-content-center">
+        <p class="address_desc fs-5" (click)="showSection(1)">Voltar <i class="bi bi-box-arrow-in-left"></i></p>
+    </div> 
+
 </section>
 
 <ng-template #finish let-modal>
@@ -77,4 +84,20 @@
     <div class="d-flex justify-content-center py-3">
         <button aria-label="Close" (click)="modal.dismiss('Cross click') || showSection(4)" class="btn btn-light btn-lg w-50 mt-4 fw-semibold border border-2" [disabled]="!people_name">Ver endereço</button>
     </div>
+</ng-template>
+
+<ng-template #error let-modal>
+	<div class="d-flex justify-content-end rounded-top">
+        <i class="bi bi-x-lg fs-1 p-2 text-danger" aria-label="Close" (click)="modal.dismiss('Cross click') || showSection(1)"></i>
+    </div>
+
+    <div class="d-flex flex-column justify-content-center p-3">
+        <div class="d-flex justify-content-center">
+            <i class="bi bi-exclamation-octagon text-danger text-center icon_error"></i>
+        </div>
+        <div>
+            <h3 class="text-secondary-emphasis fw-bolder text-center">Houve um erro, tente novamente ou entre em contato com o <span class="text_names">Douglas</span> ou com a <span class="text_names">Tatiane</span>.</h3>
+        </div>
+    </div>
+
 </ng-template>
