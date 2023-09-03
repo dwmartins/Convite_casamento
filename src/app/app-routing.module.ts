@@ -5,7 +5,8 @@ import { ListPeopleComponent } from './components/list-people/list-people.compon
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'lista-convidados', component: ListPeopleComponent}
+  {path: 'lista-convidados', component: ListPeopleComponent},
+  {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 
 @NgModule({
