@@ -23,6 +23,6 @@ export class PeopleService {
   }
 
   getPeoples() {
-    return this.http.get<People[]>(`${this.API}/lista-pessoas`);
+    return this.http.post<People[]>(`${this.API}/lista-pessoas`, '');
   }
 }
