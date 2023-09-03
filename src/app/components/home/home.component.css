@@ -17,11 +17,11 @@
     max-width: 600px;
     display: flex;
     flex-direction: column;
-    gap: 5%;
+    /* gap: 2%; */
 }
 
 .img_casal {
-    max-width: 300px;
+    max-width: 260px;
 }
 
 .address_desc {

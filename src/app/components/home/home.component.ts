@@ -44,6 +44,10 @@ export class HomeComponent implements OnInit{
 
   lessPeople() {
     this.qtd_people -= 1;
+
+    if(this.qtd_people <= 0) {
+      this.qtd_people = 0
+    }
   }
 
   insertPeople() {
