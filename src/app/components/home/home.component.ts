@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit{
   @ViewChild('error', { static: true }) error!: ElementRef;
   
   people_name: string= '';
-  qtd_people: number = 0;
+  qtd_people: number = 1;
   
   showSection1 = true;
   showSection2 = false;
@@ -45,8 +45,8 @@ export class HomeComponent implements OnInit{
   lessPeople() {
     this.qtd_people -= 1;
 
-    if(this.qtd_people <= 0) {
-      this.qtd_people = 0
+    if(this.qtd_people <= 1) {
+      this.qtd_people = 1
     }
   }
 
